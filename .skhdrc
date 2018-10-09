@@ -1,0 +1,56 @@
+# focus window
+ctrl - h : chunkc tiling::window --focus west
+ctrl - j : chunkc tiling::window --focus south
+ctrl - k : chunkc tiling::window --focus north
+ctrl - l : chunkc tiling::window --focus east
+
+# swap window
+shift + ctrl - h : chunkc tiling::window --swap west
+shift + ctrl - j : chunkc tiling::window --swap south
+shift + ctrl - k : chunkc tiling::window --swap north
+shift + ctrl - l : chunkc tiling::window --swap east
+
+# shrink/extend width/height                                        # -/+                                                                         # -/+
+shift + ctrl + alt - h : chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge west;  chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge east
+shift + ctrl + alt - j : chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio -0.05 --adjust-window-edge south
+shift + ctrl + alt - k : chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge north; chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge south
+shift + ctrl + alt - l : chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge west;  chunkc tiling::window --use-temporary-ratio  0.05 --adjust-window-edge east
+
+# equalize size of windows
+shift + ctrl - 0 : chunkc tiling::desktop --equalize
+
+# send window to desktop and follow focus
+# shift + cmd - x : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop); chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
+# shift + cmd - z : chunkc tiling::window --send-to-desktop prev; chunkc tiling::desktop --focus prev
+#shift + cmd - c : chunkc tiling::window --send-to-desktop next; chunkc tiling::desktop --focus next
+shift + ctrl - 1 : chunkc tiling::window --send-to-desktop 1; chunkc tiling::desktop --focus 1
+shift + ctrl - 2 : chunkc tiling::window --send-to-desktop 2; chunkc tiling::desktop --focus 2
+shift + ctrl - 3 : chunkc tiling::window --send-to-desktop 3; chunkc tiling::desktop --focus 3
+shift + ctrl - 4 : chunkc tiling::window --send-to-desktop 4; chunkc tiling::desktop --focus 4
+shift + ctrl - 5 : chunkc tiling::window --send-to-desktop 5; chunkc tiling::desktop --focus 5
+shift + ctrl - 6 : chunkc tiling::window --send-to-desktop 6; chunkc tiling::desktop --focus 6
+
+# rotate tree
+shift + ctrl - r : chunkc tiling::desktop --rotate 90
+
+# mirror tree y-axis
+shift + ctrl - y : chunkc tiling::desktop --mirror vertical
+
+# mirror tree x-axis
+shift + ctrl - x : chunkc tiling::desktop --mirror horizontal
+
+# toggle window split type
+shift + ctrl - e : chunkc tiling::window --toggle split
+
+# toggle desktop offset
+shift + ctrl - a : chunkc tiling::desktop --toggle offset
+
+# toggle window fullscreen
+shift + ctrl - f : chunkc tiling::window --toggle fullscreen
+
+# toggle window parent zoom
+shift + ctrl - d : chunkc tiling::window --toggle parent
+
+# float / unfloat window and center on screen
+shift + ctrl - t : chunkc tiling::window --toggle float;\
+                  chunkc tiling::window --grid-layout 4:4:1:1:2:2
